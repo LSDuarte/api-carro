@@ -1,10 +1,8 @@
 package com.spring.apicarro.api;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,18 +14,10 @@ public class IndexController {
 		return "Get Spring Boot";
 	}
 
-	@PostMapping
-	public String post() {
-		return "Post Spring Boot";
+	// aprendendo a passar parametro
+	@GetMapping("/login")
+	public String login(@RequestParam("user") String user, @RequestParam("pass") String pass) {
+		return "Login: " + user + ", Pass: " + pass;
 	}
 
-	@PutMapping
-	public String put() {
-		return "Put Spring Boot";
-	}
-
-	@DeleteMapping
-	public String delete() {
-		return "Delete Spring Boot";
-	}
 }
