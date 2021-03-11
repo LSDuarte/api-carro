@@ -1,7 +1,6 @@
 package com.spring.apicarro.api;
 
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,13 +9,14 @@ import com.spring.apicarro.domain.Carro;
 import com.spring.apicarro.domain.CarroService;
 
 @RestController
-@RequestMapping("/api/v1/test/carros")
+@RequestMapping("/api/v1/carros")
 public class CarrosController {
 
-	private CarroService service = new CarroService();
+	@Autowired
+	private CarroService service;
 
 	@GetMapping
-	public List<Carro> get() {
+	public Iterable<Carro> get() {
 		return service.getCarros();
 	}
 }

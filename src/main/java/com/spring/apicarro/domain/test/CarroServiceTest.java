@@ -7,7 +7,7 @@ import com.spring.apicarro.domain.Carro;
 
 public class CarroServiceTest {
 
-	public List<Carro> getCarros() {
+	public List<Carro> getCarrosFake() {
 		List<Carro> carros = new ArrayList<>();
  		carros.add(new Carro(1L, "Fusca"));
  		carros.add(new Carro(2L, "Celta"));
