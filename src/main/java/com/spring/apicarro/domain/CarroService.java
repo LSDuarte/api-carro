@@ -23,5 +23,8 @@ public class CarroService {
 		return repository.findAll();
 	}
 
+	public Carro save(Carro carro) {
+		return repository.save(carro);
+	}
 
 }
