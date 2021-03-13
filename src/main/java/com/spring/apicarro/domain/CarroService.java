@@ -1,5 +1,6 @@
 package com.spring.apicarro.domain;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class CarroService {
 		return repository.findById(id);
 	}
 
-	public Iterable<Carro> getCarroByTipo(String tipo) {
+	public List<Carro> getCarroByTipo(String tipo) {
 		return repository.findByTipo(tipo);
 	}
 
