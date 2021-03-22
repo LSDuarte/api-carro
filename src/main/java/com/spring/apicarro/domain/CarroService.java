@@ -17,7 +17,7 @@ public class CarroService {
 	private CarroRepository repository;
 
 	public List<CarroDTO> getCarros() {
-		return repository.findAll().stream().map(CarroDTO::new).collect(Collectors.toList());
+		return repository.findAll().stream().map(CarroDTO::create).collect(Collectors.toList());
 		/*
 		 * List<CarroDTO> list = new ArrayList<>();
 		 * for(Carro c : carros) {
@@ -27,12 +27,12 @@ public class CarroService {
 		 * */
 	}
 
-	public Optional<Carro> getCarroById(Long id) {
-		return repository.findById(id);
+	public Optional<CarroDTO> getCarroById(Long id) {
+		return repository.findById(id).map(CarroDTO::create);
 	}
 
 	public List<CarroDTO> getCarroByTipo(String tipo) {
-		return repository.findByTipo(tipo).stream().map(CarroDTO::new).collect(Collectors.toList());
+		return repository.findByTipo(tipo).stream().map(CarroDTO::create).collect(Collectors.toList());
 	}
 
 	public Carro insert(Carro carro) {
@@ -71,8 +71,7 @@ public class CarroService {
 	}
 
 	public void delete(Long id) {
-		Optional<Carro> carro = getCarroById(id);
-		if (carro.isPresent()) {
+		if (getCarroById(id).isPresent()) {
 			repository.deleteById(id);
 		}
 	}

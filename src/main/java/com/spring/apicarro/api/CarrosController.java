@@ -34,15 +34,16 @@ public class CarrosController {
 	@SuppressWarnings("rawtypes")
 	@GetMapping("/{id}")
 	public ResponseEntity get(@PathVariable("id") Long id) {
-		Optional<Carro> carro = service.getCarroById(id);
-		if (carro.isPresent()) {
+		Optional<CarroDTO> carro = service.getCarroById(id);
+		return carro.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+	
+	/*	if (carro.isPresent()) {
 			return ResponseEntity.ok(carro.get());
 		} else {
 			return ResponseEntity.notFound().build();
 		}
-		
+	*/	
 		// return carro.isPresent() ? ResponseEntity.ok(carro.get()) : ResponseEntity.notFound().build();
-		// return carro.map(c -> ResponseEntity.ok(c)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@SuppressWarnings("rawtypes")

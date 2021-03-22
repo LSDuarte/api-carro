@@ -1,5 +1,7 @@
 package com.spring.apicarro.domain.dto;
 
+import org.modelmapper.ModelMapper;
+
 import com.spring.apicarro.domain.Carro;
 
 import lombok.Data;
@@ -10,10 +12,10 @@ public class CarroDTO {
 	private Long id;
 	private String nome;
 	private String tipo;
-
-	public CarroDTO(Carro c) {
-		this.id = c.getId();
-		this.nome = c.getNome();
-		this.tipo = c.getTipo();
+	
+	// gera um carro DTO apartir de Carro
+	public static CarroDTO create(Carro c) {
+		ModelMapper modelMapper = new ModelMapper();
+		return modelMapper.map(c, CarroDTO.class);
 	}
 }

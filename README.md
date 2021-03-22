@@ -56,7 +56,8 @@
 
 ## 📖 DTO (Data Transfer Object)
  
-- O projeto Lombok
+- O projeto Lombok 
+- <a> (https://dicasdejava.com.br/como-configurar-o-lombok-no-eclipse/) </a>
 - Lombok no Eclipse
 - DTO - Data Transfer Object e JPARepository
 - DTO - parte 2 - lambdas
