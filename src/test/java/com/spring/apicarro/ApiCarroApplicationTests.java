@@ -52,7 +52,21 @@ class ApiCarroApplicationTests {
 	@Test
 	public void testLista() {
 		List<CarroDTO> carros = service.getCarros();
-		assertEquals(31, carros.size());
+		assertEquals(60, carros.size());
+	}
+
+	@Test
+	public void testListaPorTipo() {
+		assertEquals(20, service.getCarroByTipo("esportivos").size());
+	}
+
+	@Test
+	public void testGet() {
+		Optional<CarroDTO> op = service.getCarroById(11L);
+		assertTrue(op.isPresent());
+
+		CarroDTO c = op.get();
+		assertEquals("Ferrari FF", c.getNome());
 	}
 
 }
