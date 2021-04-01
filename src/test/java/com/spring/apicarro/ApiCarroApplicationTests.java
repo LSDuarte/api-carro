@@ -58,6 +58,10 @@ class ApiCarroApplicationTests {
 	@Test
 	public void testListaPorTipo() {
 		assertEquals(20, service.getCarroByTipo("esportivos").size());
+		assertEquals(20, service.getCarroByTipo("classicos").size());
+		assertEquals(20, service.getCarroByTipo("luxo").size());
+		
+		assertEquals(0, service.getCarroByTipo("x").size());
 	}
 
 	@Test
