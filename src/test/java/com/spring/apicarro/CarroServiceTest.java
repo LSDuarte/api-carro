@@ -17,7 +17,7 @@ import com.spring.apicarro.domain.CarroService;
 import com.spring.apicarro.domain.dto.CarroDTO;
 
 @SpringBootTest
-class ApiCarroApplicationTests {
+class CarroServiceTest {
 
 	@Autowired
 	private CarroService service;
