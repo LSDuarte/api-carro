@@ -18,13 +18,6 @@ public class CarroService {
 
 	public List<CarroDTO> getCarros() {
 		return repository.findAll().stream().map(CarroDTO::create).collect(Collectors.toList());
-		/*
-		 * List<CarroDTO> list = new ArrayList<>();
-		 * for(Carro c : carros) {
-		 * 	list.add(new CarroDTO(c));
-		 * }
-		 * return list;
-		 * */
 	}
 
 	public Optional<CarroDTO> getCarroById(Long id) {
@@ -58,24 +51,10 @@ public class CarroService {
 		} else {
 			return null;
 		}
-		
-		// lambda
-		/*getCarroById(id).map(db -> {
-			db.setNome(carro.getNome());
-			db.setTipo(carro.getTipo());
-			System.out.println("Carro id: " + db.getId());
-			
-			repository.save(db);
-			return db;
-		}).orElseThrow(() -> new RuntimeException("Não foi possível atualizar o registro!"));*/
 	}
 
-	public boolean delete(Long id) {
-		if (getCarroById(id).isPresent()) {
-			repository.deleteById(id);
-			return true;
-		}
-		return false;
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 
 }
