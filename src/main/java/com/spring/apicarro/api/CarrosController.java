@@ -2,7 +2,6 @@ package com.spring.apicarro.api;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,8 +34,8 @@ public class CarrosController {
 	@SuppressWarnings("rawtypes")
 	@GetMapping("/{id}")
 	public ResponseEntity get(@PathVariable("id") Long id) {
-		Optional<CarroDTO> carro = service.getCarroById(id);
-		return carro.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
+		CarroDTO c = service.getCarroById(id);
+		return ResponseEntity.ok(c);
 	}
 
 	@SuppressWarnings("rawtypes")

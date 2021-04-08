@@ -20,8 +20,8 @@ public class CarroService {
 		return repository.findAll().stream().map(CarroDTO::create).collect(Collectors.toList());
 	}
 
-	public Optional<CarroDTO> getCarroById(Long id) {
-		return repository.findById(id).map(CarroDTO::create);
+	public CarroDTO getCarroById(Long id) {
+		return repository.findById(id).map(CarroDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado."));
 	}
 
 	public List<CarroDTO> getCarroByTipo(String tipo) {
