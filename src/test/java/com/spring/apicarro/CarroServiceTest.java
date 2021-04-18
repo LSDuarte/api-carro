@@ -59,14 +59,14 @@ class CarroServiceTest {
 	@Test
 	public void testLista() {
 		List<CarroDTO> carros = service.getCarros();
-		assertEquals(60, carros.size());
+		assertEquals(30, carros.size());
 	}
 
 	@Test
 	public void testListaPorTipo() {
-		assertEquals(20, service.getCarroByTipo("esportivos").size());
-		assertEquals(20, service.getCarroByTipo("classicos").size());
-		assertEquals(20, service.getCarroByTipo("luxo").size());
+		assertEquals(10, service.getCarroByTipo("esportivos").size());
+		assertEquals(10, service.getCarroByTipo("classicos").size());
+		assertEquals(10, service.getCarroByTipo("luxo").size());
 		
 		assertEquals(0, service.getCarroByTipo("x").size());
 	}
