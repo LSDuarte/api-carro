@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.spring.apicarro.api.exception.ObjectNotFoundException;
 import com.spring.apicarro.domain.Carro;
 import com.spring.apicarro.domain.CarroService;
-import com.spring.apicarro.domain.ObjectNotFoundException;
 import com.spring.apicarro.domain.dto.CarroDTO;
 
 @SpringBootTest

@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class IndexController {
 
-	@GetMapping
-	public String get() {
-		return "Api dos Carros";
-	}
-	
-	@GetMapping("/userInfo")
+	@GetMapping()
+    public String get() {
+        return "API dos Carros - Heroku Git";
+    }
+
+    @GetMapping("/userInfo")
     public UserDetails userInfo(@AuthenticationPrincipal UserDetails user) {
         return user;
     }
