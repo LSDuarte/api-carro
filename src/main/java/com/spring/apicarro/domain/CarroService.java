@@ -45,7 +45,7 @@ public class CarroService {
 			db.setTipo(carro.getTipo());
 			System.out.println("Carro id: " + carro.getId());
 
-			// Atualiza p carrp
+			// Atualiza o carro
 			repository.save(db);
 			return CarroDTO.create(db);
 		} else {
