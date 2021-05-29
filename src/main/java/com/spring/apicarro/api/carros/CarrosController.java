@@ -1,4 +1,4 @@
-package com.spring.apicarro.api;
+package com.spring.apicarro.api.carros;
 
 import java.net.URI;
 import java.util.List;
