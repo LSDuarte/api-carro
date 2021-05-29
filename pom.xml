@@ -114,13 +114,14 @@
 		
 	</dependencies>
 	
+    <!-- Google repo -->	
 	<repositories>
        <repository>
            <id>spring-repo</id>
            <url>https://maven.google.com/</url>
        </repository>
     </repositories>
-
+    
 	<build>
 		<plugins>
 			<plugin>
